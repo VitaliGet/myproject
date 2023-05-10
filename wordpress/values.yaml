@@ -61,9 +61,9 @@ ingress:
 
 env:
   DATABASEHOST: "192.168.201.4:3306"
-  DATABASEUSER: "project_wordpress"
-  DATABASEPASSWORD: "project_wordpress"
-  DATABASENAME: "project_wordpress"
+  DATABASEUSER: "myproject_wordpress"
+  DATABASEPASSWORD: "myproject_wordpress"
+  DATABASENAME: "myproject_wordpress"
 
 resources:
   limits:

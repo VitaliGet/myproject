@@ -10,7 +10,7 @@ image:
   repository: wordpress
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "latest"
+  tag: "6.0"
 
 imagePullSecrets: []
 nameOverride: ""

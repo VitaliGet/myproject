@@ -52,7 +52,8 @@ jobs:
       
       - name: Publish Helm charts
         run: |
-          sed -i 's/tag:*/tag: "${{ steps.tag_version.outputs.new_tag }}"/' helm-source/wordpress/values.yaml
+          sed -i 's/tag: "*"/tag: "${{ steps.tag_version.outputs.new_tag }}"/' helm-source/wordpress/values.yaml
+          cat helm-source/wordpress/values.yaml
           cd helm-source/
           helm package wordpress --version=${{ steps.tag_version.outputs.new_tag }} --app-version=${{ steps.tag_version.outputs.new_tag }}
           mv wordpress-v* ../helm-release

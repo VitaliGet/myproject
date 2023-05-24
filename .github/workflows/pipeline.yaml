@@ -60,10 +60,13 @@ jobs:
           helm repo index --url https://vitaliget.github.io/myproject/ --merge index.yaml .
      
       - name: Push changes  
-        uses: actions-go/push@master
+        uses: steven-mi/push-latest-changes-action@v1.0
         with:
-          commit-message: 'Publish wordpress:${{ steps.tag_version.outputs.new_tag }}'
-          remote: origin
+          github-token: ${{ secrets.GH_TOKEN }}
+          repository: myproject
+          branch: master
+          force: false 
+          directory: "."
 
       - name: Slack notification
         uses: rtCamp/action-slack-notify@v2

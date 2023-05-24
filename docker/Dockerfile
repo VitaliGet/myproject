@@ -4,21 +4,7 @@
 # PLEASE DO NOT EDIT IT DIRECTLY.
 #
 
-FROM php:8.1-apache
-
-# variations of Wordpress versions
-ENV \
-    WP_VERSION=6.1.1 \
-    WP_VERSION_SHA1=80f0f829645dec07c68bcfe0a0a1e1d563992fcb
-#    WP_VERSION=6.0.3 \
-#    WP_VERSION_SHA1=9ab0d521aac7042cf09946f17ec86dc65b182201
-#    WP_VERSION=5.9.5 \
-#    WP_VERSION_SHA1=0b8c29226316596d6567584b9b0c9c2b664528b9
-#    WP_VERSION=5.6.10 \
-#    WP_VERSION_SHA1=1dce657fff0a9dd798ed511c653c1651cc3cf557
-#    WP_VERSION=5.2.17 \
-#    WP_VERSION_SHA1=a42a8c92bfbd24be1913f88aa4afc37ff7fc4fcf
-
+FROM php:8.2-apache
 
 # persistent dependencies
 RUN set -eux; \
@@ -63,7 +49,7 @@ RUN set -ex; \
 	docker-php-ext-enable imagick; \
 	rm -r /tmp/pear; \
 	\
-# some misbehaving extensions end up outputting to stdout (https://github.com/docker-library/wordpress/issues/669#issuecomment-993945967)
+# some misbehaving extensions end up outputting to stdout 🙈 (https://github.com/docker-library/wordpress/issues/669#issuecomment-993945967)
 	out="$(php -r 'exit(0);')"; \
 	[ -z "$out" ]; \
 	err="$(php -r 'exit(0);' 3>&1 1>&2 2>&3)"; \
@@ -99,7 +85,6 @@ RUN set -eux; \
 		echo 'opcache.interned_strings_buffer=8'; \
 		echo 'opcache.max_accelerated_files=4000'; \
 		echo 'opcache.revalidate_freq=2'; \
-		echo 'opcache.fast_shutdown=1'; \
 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
 # https://wordpress.org/support/article/editing-wp-config-php/#configure-error-logging
 RUN { \
@@ -136,8 +121,8 @@ RUN set -eux; \
 	find /etc/apache2 -type f -name '*.conf' -exec sed -ri 's/([[:space:]]*LogFormat[[:space:]]+"[^"]*)%h([^"]*")/\1%a\2/g' '{}' +
 
 RUN set -eux; \
-	version=${WP_VERSION}; \
-	sha1=${WP_VERSION_SHA1}; \
+	version='6.2.2'; \
+	sha1='a355d1b975405a391c4a78f988d656b375683fb2'; \
 	\
 	curl -o wordpress.tar.gz -fL "https://wordpress.org/wordpress-$version.tar.gz"; \
 	echo "$sha1 *wordpress.tar.gz" | sha1sum -c -; \
@@ -171,16 +156,12 @@ RUN set -eux; \
 		mkdir "wp-content/$dir"; \
 	done; \
 	chown -R www-data:www-data wp-content; \
-	chmod -R 777 wp-content
+	chmod -R 1777 wp-content
 
 VOLUME /var/www/html
 
 COPY --chown=www-data:www-data wp-config-docker.php /usr/src/wordpress/
 COPY docker-entrypoint.sh /usr/local/bin/
-
-COPY --chown=www-data:www-data wp-content/ /usr/src/wordpress/wp-content/
-
-RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["apache2-foreground"]

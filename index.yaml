@@ -3,7 +3,7 @@ entries:
   wordpress:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-05-19T00:45:12.893700143+03:00"
+    created: "2023-05-24T11:14:32.580055709Z"
     description: A Helm chart for Kubernetes
     digest: 4e81dc6216b9b840bc18f6911465c1366ffc69402c70d201a36feba4be4db9b2
     name: wordpress
@@ -13,7 +13,7 @@ entries:
     version: 6.0.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-05-19T00:45:12.891347466+03:00"
+    created: "2023-05-24T11:14:32.579576205Z"
     description: A Helm chart for Kubernetes
     digest: 2af7a83384e7607552564892c0c4e14755710e61d1746b57846a3dc49e43b1a3
     name: wordpress
@@ -23,7 +23,7 @@ entries:
     version: 0.5.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-05-19T00:45:12.883483533+03:00"
+    created: "2023-05-24T11:14:32.5790462Z"
     description: A Helm chart for Kubernetes
     digest: bc444113f3c1d247f629b38f2404a8cc4f47114afd2a68db2fe18cd6ced10f43
     name: wordpress
@@ -33,7 +33,7 @@ entries:
     version: 0.4.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-05-19T00:45:12.880327882+03:00"
+    created: "2023-05-24T11:14:32.578521096Z"
     description: A Helm chart for Kubernetes
     digest: 66ad8549b4d838c6e58b46b6cf85f0ce0f7332f1b61c5a147bc52f1765be0db7
     name: wordpress
@@ -43,7 +43,7 @@ entries:
     version: 0.3.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-05-19T00:45:12.876839313+03:00"
+    created: "2023-05-24T11:14:32.577983891Z"
     description: A Helm chart for Kubernetes
     digest: ee8009c884131b6a33373ae042ad46a0876aa361e445ee581ae7ef794fe31a21
     name: wordpress
@@ -53,7 +53,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-05-19T00:45:12.841021489+03:00"
+    created: "2023-05-24T11:14:32.577441886Z"
     description: A Helm chart for Kubernetes
     digest: 4dfc70a8ee80f470a6490cbe7c2b5f7951bbcaa2536785c0c478c0966e3bf7c6
     name: wordpress
@@ -61,4 +61,14 @@ entries:
     urls:
     - https://vitaliget.github.io/myproject/helm-release/wordpress-0.1.0.tgz
     version: 0.1.0
-generated: "2023-05-19T00:45:12.808108525+03:00"
+  - apiVersion: v2
+    appVersion: v0.0.10
+    created: "2023-05-24T11:14:32.580537014Z"
+    description: A Helm chart for Kubernetes
+    digest: 92a930da787a46fe163fda31de30e5934434c3818e764401bd156143bcad4897
+    name: wordpress
+    type: application
+    urls:
+    - https://vitaliget.github.io/myproject/helm-release/wordpress-v0.0.10.tgz
+    version: v0.0.10
+generated: "2023-05-24T11:14:32.576667079Z"

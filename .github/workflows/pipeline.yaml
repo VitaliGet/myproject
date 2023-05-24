@@ -18,7 +18,7 @@ jobs:
       - name: "Hadolint"
         uses: jbergstroem/hadolint-gh-action@v1
         with:
-          path: ./docker/Dockerfile
+          dockerfile: "./docker/Dockerfile"
 
       - name: Bump version and push tag
         id: tag_version

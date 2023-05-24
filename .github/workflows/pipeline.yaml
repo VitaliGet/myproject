@@ -3,7 +3,7 @@ name: project-pipeline
 on:
   push:
     branches: [ "master" ]
-    #  workflow_dispatch:
+  workflow_dispatch:
 
 jobs:
   build:
@@ -17,6 +17,8 @@ jobs:
           
       - name: "Hadolint"
         uses: jbergstroem/hadolint-gh-action@v1
+        with:
+          path: ./docker/Dockerfile
 
       - name: Bump version and push tag
         id: tag_version
@@ -33,7 +35,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
-          context: ./Docker
+          context: ./docker
           push: true
           tags: getmanovich7/wordpress:${{ steps.tag_version.outputs.new_tag }}
           

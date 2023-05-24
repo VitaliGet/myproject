@@ -59,7 +59,7 @@ jobs:
           cd ../..
           helm repo index --url https://vitaliget.github.io/myproject/ --merge index.yaml .
      
-        name: Push changes  
+      - name: Push changes  
         uses: actions-go/push@master
         with:
           commit-message: 'Publish wordpress:${{ steps.tag_version.outputs.new_tag }}'

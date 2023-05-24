@@ -55,8 +55,8 @@ jobs:
           sed -i 's/new-tag/${{ steps.tag_version.outputs.new_tag }}/' helm-source/wordpress/values.yaml
           cd helm-source/
           helm package wordpress --version=${{ steps.tag_version.outputs.new_tag }} --app-version=${{ steps.tag_version.outputs.new_tag }}
-          mv wordpress-v* ../../helm-release
-          cd ../..
+          mv wordpress-v* ../helm-release
+          cd ..
           helm repo index --url https://vitaliget.github.io/myproject/ --merge index.yaml .
      
       - name: Commit and push changes
@@ -65,13 +65,7 @@ jobs:
           git config user.email github-actions@github.com
           git add --all
           git commit -m "Publish wordpress:${{ steps.tag_version.outputs.new_tag }}"
-
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GH_TOKEN }}
-          branch: "master"          
-
+          git push origin master
 
       - name: Slack notification
         uses: rtCamp/action-slack-notify@v2

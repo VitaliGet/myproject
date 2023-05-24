@@ -9,6 +9,7 @@ on:
 
 jobs:
   build:
+    name: ci-cd project
     runs-on: ubuntu-latest
     steps:
       - name: Checks-out the repository

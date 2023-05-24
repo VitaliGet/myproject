@@ -96,5 +96,4 @@ if [[ "$1" == apache2* ]] || [ "$1" = 'php-fpm' ]; then
 	fi
 fi
 
-
 exec "$@"

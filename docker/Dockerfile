@@ -4,7 +4,7 @@
 # PLEASE DO NOT EDIT IT DIRECTLY.
 #
 
-FROM php:7.4-apache
+FROM php:8.0-apache
 
 # persistent dependencies
 RUN set -eux; \
@@ -85,7 +85,6 @@ RUN set -eux; \
 		echo 'opcache.interned_strings_buffer=8'; \
 		echo 'opcache.max_accelerated_files=4000'; \
 		echo 'opcache.revalidate_freq=2'; \
-		echo 'opcache.fast_shutdown=1'; \
 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
 # https://wordpress.org/support/article/editing-wp-config-php/#configure-error-logging
 RUN { \
@@ -122,16 +121,8 @@ RUN set -eux; \
 	find /etc/apache2 -type f -name '*.conf' -exec sed -ri 's/([[:space:]]*LogFormat[[:space:]]+"[^"]*)%h([^"]*")/\1%a\2/g' '{}' +
 
 RUN set -eux; \
-	#version='6.0.1'; \
-	#sha1='a1c02b6b754d74c08a70d5a8b604bdb72f1b276a'; \
-	version='6.0'; \
-	sha1='7a5a6d0591771e730b05c49d0c3fc134624d0491'; \
-	#version='5.9.4'; \
-	#sha1='4def36bb1b4a3c935cf9758f652cd719e97d97c9'; \
-	#version='5.9.3'; \
-	#sha1='cab576e112c45806c474b3cbe0d1263a2a879adf'; \
-	#version='5.9.2'; \
-	#sha1='19653440effafce0f768a1ba5092710717835bdc'; \
+	version='6.2.2'; \
+	sha1='a355d1b975405a391c4a78f988d656b375683fb2'; \
 	\
 	curl -o wordpress.tar.gz -fL "https://wordpress.org/wordpress-$version.tar.gz"; \
 	echo "$sha1 *wordpress.tar.gz" | sha1sum -c -; \
@@ -165,14 +156,12 @@ RUN set -eux; \
 		mkdir "wp-content/$dir"; \
 	done; \
 	chown -R www-data:www-data wp-content; \
-	chmod -R 777 wp-content
+	chmod -R 1777 wp-content
 
 VOLUME /var/www/html
 
 COPY --chown=www-data:www-data wp-config-docker.php /usr/src/wordpress/
 COPY docker-entrypoint.sh /usr/local/bin/
-
-RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["apache2-foreground"]

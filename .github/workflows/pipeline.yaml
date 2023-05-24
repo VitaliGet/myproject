@@ -2,10 +2,8 @@ name: project-pipeline
 
 on:
   push:
-    paths-ignore:
-      - 'README.md'
   branches: [ "master" ]
-  workflow_dispatch:
+    #  workflow_dispatch:
 
 jobs:
   build:

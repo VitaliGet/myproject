@@ -58,7 +58,13 @@ jobs:
           mv wordpress-v* ../../helm-release
           cd ../..
           helm repo index --url https://vitaliget.github.io/myproject/ --merge index.yaml .
-      
+     
+        name: Push changes  
+        uses: actions-go/push@master
+        with:
+          commit-message: 'Publish wordpress:${{ steps.tag_version.outputs.new_tag }}'
+          remote: origin
+
       - name: Slack notification
         uses: rtCamp/action-slack-notify@v2
         env:

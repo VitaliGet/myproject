@@ -7,7 +7,7 @@ deployStrategy: []
 
 
 image:
-  repository: wordpress
+  repository: getmanovich7/wordpress
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "new-tag"

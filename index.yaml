@@ -3,7 +3,7 @@ entries:
   wordpress:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-05-24T13:41:36.123051654Z"
+    created: "2023-05-24T14:36:59.824100056Z"
     description: A Helm chart for Kubernetes
     digest: 4e81dc6216b9b840bc18f6911465c1366ffc69402c70d201a36feba4be4db9b2
     name: wordpress
@@ -13,7 +13,7 @@ entries:
     version: 6.0.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-05-24T13:41:36.122417257Z"
+    created: "2023-05-24T14:36:59.823574851Z"
     description: A Helm chart for Kubernetes
     digest: 2af7a83384e7607552564892c0c4e14755710e61d1746b57846a3dc49e43b1a3
     name: wordpress
@@ -23,7 +23,7 @@ entries:
     version: 0.5.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-05-24T13:41:36.121802159Z"
+    created: "2023-05-24T14:36:59.823107947Z"
     description: A Helm chart for Kubernetes
     digest: bc444113f3c1d247f629b38f2404a8cc4f47114afd2a68db2fe18cd6ced10f43
     name: wordpress
@@ -33,7 +33,7 @@ entries:
     version: 0.4.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-05-24T13:41:36.121202562Z"
+    created: "2023-05-24T14:36:59.822616442Z"
     description: A Helm chart for Kubernetes
     digest: 66ad8549b4d838c6e58b46b6cf85f0ce0f7332f1b61c5a147bc52f1765be0db7
     name: wordpress
@@ -43,7 +43,7 @@ entries:
     version: 0.3.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-05-24T13:41:36.120489065Z"
+    created: "2023-05-24T14:36:59.822085637Z"
     description: A Helm chart for Kubernetes
     digest: ee8009c884131b6a33373ae042ad46a0876aa361e445ee581ae7ef794fe31a21
     name: wordpress
@@ -53,7 +53,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-05-24T13:41:36.119813067Z"
+    created: "2023-05-24T14:36:59.821523832Z"
     description: A Helm chart for Kubernetes
     digest: 4dfc70a8ee80f470a6490cbe7c2b5f7951bbcaa2536785c0c478c0966e3bf7c6
     name: wordpress
@@ -62,8 +62,18 @@ entries:
     - https://vitaliget.github.io/myproject/helm-release/wordpress-0.1.0.tgz
     version: 0.1.0
   - apiVersion: v2
+    appVersion: v0.0.19
+    created: "2023-05-24T14:36:59.829030201Z"
+    description: A Helm chart for Kubernetes
+    digest: 0f31d3367cddb9b9550d2af7bea2e9430610d53eea0e2f6f4fd45c3c9f816de5
+    name: wordpress
+    type: application
+    urls:
+    - https://vitaliget.github.io/myproject/helm-release/wordpress-v0.0.19.tgz
+    version: v0.0.19
+  - apiVersion: v2
     appVersion: v0.0.17
-    created: "2023-05-24T13:41:36.12647714Z"
+    created: "2023-05-24T14:36:59.828467796Z"
     description: A Helm chart for Kubernetes
     digest: ec0f98df2343ad6eaa81d73831c85edff58b0980a91538413d22beedf69d91e0
     name: wordpress
@@ -73,7 +83,7 @@ entries:
     version: v0.0.17
   - apiVersion: v2
     appVersion: v0.0.16
-    created: "2023-05-24T13:41:36.125829043Z"
+    created: "2023-05-24T14:36:59.827321985Z"
     description: A Helm chart for Kubernetes
     digest: d61d9b62595beae183f0ec32685e9444b820425953498fdcdd131482bcd4be3c
     name: wordpress
@@ -83,7 +93,7 @@ entries:
     version: v0.0.16
   - apiVersion: v2
     appVersion: v0.0.15
-    created: "2023-05-24T13:41:36.125187246Z"
+    created: "2023-05-24T14:36:59.826560078Z"
     description: A Helm chart for Kubernetes
     digest: 8b18535db8492510440baa8dd9e886d04d003271560853b586cbdef285ddcfe5
     name: wordpress
@@ -93,7 +103,7 @@ entries:
     version: v0.0.15
   - apiVersion: v2
     appVersion: v0.0.11
-    created: "2023-05-24T13:41:36.124502248Z"
+    created: "2023-05-24T14:36:59.82567167Z"
     description: A Helm chart for Kubernetes
     digest: d1b0e95b88e40768146787f251570ecd96cb5092ca401def53f976c622a834e2
     name: wordpress
@@ -103,7 +113,7 @@ entries:
     version: v0.0.11
   - apiVersion: v2
     appVersion: v0.0.10
-    created: "2023-05-24T13:41:36.123796151Z"
+    created: "2023-05-24T14:36:59.825174566Z"
     description: A Helm chart for Kubernetes
     digest: 92a930da787a46fe163fda31de30e5934434c3818e764401bd156143bcad4897
     name: wordpress
@@ -111,4 +121,4 @@ entries:
     urls:
     - https://vitaliget.github.io/myproject/helm-release/wordpress-v0.0.10.tgz
     version: v0.0.10
-generated: "2023-05-24T13:41:36.118779472Z"
+generated: "2023-05-24T14:36:59.820786625Z"

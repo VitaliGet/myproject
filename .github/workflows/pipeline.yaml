@@ -61,8 +61,8 @@ jobs:
      
       - name: Commit and push changes
         run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
+          git config user.name VitaliGet
+          git config user.email getmanovich1987@gmail.com
           git add --all
           git commit -m "Publish wordpress:${{ steps.tag_version.outputs.new_tag }}"
 

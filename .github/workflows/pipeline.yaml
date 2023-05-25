@@ -2,8 +2,7 @@ name: project-pipeline
 
 on:
   push:
-    paths:
-      - 'docker/**'
+    branches: [ "master" ]
   workflow_dispatch:
 
 jobs:
